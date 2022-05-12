@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgba(2, 51, 82, 0.582);
+}
+@font-face {
+    font-family: cuprum;
+    src: url(link/ofont.ru_Cuprum.ttf);
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+.scroll {
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+    font-size: 1.01em;
+    width: 100px;
+    height: 35px;
+    border: none;
+    background: #fff;
+    border-radius: 25px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+}
+.scroll:hover {
+    background: none;
+    border: 1px solid #fff;
+}
+.blur {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(25px);
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    border-radius: 10px;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+    overflow: hidden;
+}
+.navigation.click{
+    width: 288px;
+    height: 530px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+    z-index: 2;
+}
+.navigation .userBx{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.navigation.click .userBx{
+    width: calc(100% - 60px);
+    transition-delay: 0s;
+}
+.navigation .userBx .userName{
+    white-space: nowrap;
+    color: #555;
+    font-size: 1.1em;
+}
+.navigation .menuToggle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.navigation .menuToggle::before{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #555;
+    transform: translateY(-10px);
+    box-shadow: 0 10px #555;
+    transition: 0.5s;
+}
+.navigation .menuToggle::after{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #555;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+.navigation.click .menuToggle::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #555;
+}
+.navigation.click .menuToggle::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+.package{
+    display: flex;
+    color: #000;
+    margin-left: 50px;
+}
+.package-name{
+    margin-right: 5px;
+}
+.menu{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    pad: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.menu li{
+    list-style: none;
+}
+.menu li .i{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin: 20px 15px;
+    font-size: 1em;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.menu li .i:hover{
+    color: #4e65ff;
+}
+.fon{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 565px;
+    background-image: url(../Bekagaming2005.github.io-main\ 2/depositphotos_522942024-stock-video-man-work-on-computer-dark.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85%;
+    background-color: #1a1b1f9f;
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 40px;
+    color: #fff;
+}
+.mountains{
+    position: relative;
+    font-size: 2em;
+    margin-right: 50px;
+    background-image: url(premium-icon-village-2388458.png);
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 194px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.btn:hover{
+    color: #555;
+}
+.maps{
+    display: flex;
+    justify-content: center;
+}
+.a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: Cuprum;
+}
+.a:hover{
+    color: rgba(192, 19, 19, 0.918);
+}
+.text{
+    position: absolute;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    top: 250px;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgb(0, 0, 0),
+    0 0 15px rgb(245, 245, 245);
+}
+.zagalovok{
+    color: #fff;
+    font-size: 4em;
+    /* box-shadow: 0 0 10px rgb(235, 232, 232),
+    0 0 25px rgb(241, 237, 237); */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 7px;
+}
+.block{
+    display: flex;
+    justify-content: center;
+    font-family: Georgia;
+    flex-wrap: wrap;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 330px;
+    height: 380px;
+    margin: 15px 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.img2{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 510px;
+    height: 380px;
+    margin: 15px 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.img:nth-child(7){
+    background-image: url(img/foto\ \(1\).jpg);
+    background-attachment: fixed;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #000;
+    width: 256px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+}
+.info2{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #000;
+    width: 450px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    font-family: Cuprum;
+}
+.georgia{
+    font-family: Cuprum;
+}
+.png{
+    width: 100px;   
+    transition: 0.3s;
+}
+.png:hover {
+    transform: scale(1.3);
+    /* box-shadow: 2px 2px 5px gray; */
+}
+
+.fon1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 270px;
+    box-shadow: 0 1px solid #111;
+    background: #fff;
+}
+.video{
+    display: flex;
+    justify-content: center;
+
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 790px;
+    color: rgb(1, 31, 49);
+    font-size: 1.3em; 
+    LINE-HEIGHT: 42px;
+    font-family: Cuprum;
+}
+.fon2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+}
+.zglvk{
+    color: #e45502;
+    display: flex;
+    align-items: center;
+    font-size: 4em;
+    font-family: Cuprum;
+    text-shadow: 0 0 10px #3a3634ce;
+}
+.mesto{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    margin-top: 60px;
+    font-family: Cuprum;
+}
+.muzei{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/what.png);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.bech-tach{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/1_dVdCxCZ8e3G3JpwRrPRiHg.jpeg);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.kirovka{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/Screenshot_1-1.png);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.chyke{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/veb-programmirovanie-p7qwk0trj9fybkrmq6bz1o7zn0l7zj12cs9tc6lad4.png);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.semenova{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/Snimok-ekrana-2021-03-12-v-13.04.27.png);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.kanykey{
+    width: 100%;
+    height: 573px;
+    background-image: url(img/каныкей.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#mesto{
+    width: 582px;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+.footer1{
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2em;
+    font-family: Cuprum;
+    /* width: inherit; */
+    height: 500px;
+    background-color: #ff7300;
+    background-image: url(img/p1100411-1024x576.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 130px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px #555,
+    0 0 25px #555;
+}
+
+.fot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(1, 31, 49); */
+    color: #000;
+    text-shadow: 0 0 1px #ffffff;
+    height: 50px;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    font-family: Cuprum;
+}
+.hr{
+    width: 100%;
+    border-top: 1px solid #111;
+    margin: 20px 0;
+}
+
+
+/* @media screen and (max-width: 1000px) {
+    .wrapper{
+        width: calc(100% -100px);
+    }
+} */

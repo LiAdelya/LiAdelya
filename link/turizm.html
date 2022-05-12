@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Историко-культурный туризм</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="turizm.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="tm-nav">
+            <nav class="navbar">
+                <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+                    data-target="#tmNavbar"></button> <!-- &#9776; ☰ -->
+                <div class="collapse navbar-toggleable-sm text-xs-center tm-navbar" id="tmNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active selected">
+                            <a class="nav-link current" href="#home">Домой<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Историко-культурный туризм</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Дополнительно</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <section class="tm-section tm-section-home tm-flex-center" id="home">
+
+            <div class="tm-hero">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-uppercase tm-hero-title">Культурный туризм</h1>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="tm-section tm-section-about" id="about">
+
+            <div class="tm-page-content-width">
+                <div class="tm-bg-black-translucent tm-content-box tm-content-box-right tm-flex-center">
+                    <div class="tm-content-box-inner">
+                        <h2 class="tm-section-title">
+                            Историко-культурный туризм —
+                            посещение и исследование мест исторической
+                            важности. В Кыргызстане популярны места
+                            , где остались древние каменные изваяния
+                            и наскальные рисунки.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="tm-section tm-section-services" id="services">
+
+            <div class="tm-page-content-width">
+                <div class="tm-bg-black-translucent tm-content-box tm-flex-center">
+                    <div class="tm-content-box-inner">
+                        <h2 class="tm-section-title">Дополнительно</h2>
+                        Здесь хранится память о национальном герое Манасе, в обширном историческом комплексе Манас ордо.
+                        Есть здесь и древние захоронения гуннов, крупнейшие на территории Средней Азии. А построенное
+                        в советские времена Кировское водохранилище являет собой уникальный пример архитектурного
+                        монументализма тех времен.
+                        <p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        
+        </section>
+
+    </div>
+
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+
+    <script>
+
+
+        function checkScrollPosition() {
+
+            if ($(window).width() < 767) {
+                $(".tm-nav").removeClass("scroll");
+                return;
+            }
+
+            if ($(window).scrollTop() > 50) {
+                $(".tm-nav").addClass("scroll");
+            } else {
+                $(".tm-nav").removeClass("scroll");
+            }
+        }
+
+        $(document).ready(function () {
+
+            $('.tm-nav').singlePageNav({
+                offset: 57,
+                filter: ':not(.external)',
+                updateHash: true
+            });
+
+            checkScrollPosition();
+
+            $('.navbar-toggle').click(function () {
+                $('.main-menu').toggleClass('show');
+            });
+
+            $('.main-menu a').click(function () {
+                $('.main-menu').removeClass('show');
+            });
+        });
+
+        $(window).on("scroll", function () {
+            checkScrollPosition();
+        });
+
+        $('#tmNavbar a').click(function () {
+            $('#tmNavbar').collapse('hide');
+        });
+
+    </script>
+
+</body>
+
+</html>
